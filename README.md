@@ -156,7 +156,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - [@yourusername](https://twitter.com/yourusername)
+Mail - mustafabuyer@gmail.com
 
 Project Link: [https://github.com/yourusername/notes-vault](https://github.com/yourusername/notes-vault)
 
