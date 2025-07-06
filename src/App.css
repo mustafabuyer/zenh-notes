@@ -1,0 +1,190 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Color Variables */
+:root {
+  --color-bg: #1e1e1e;
+  --color-bg-secondary: #262626;
+  --color-bg-tertiary: #2d2d2d;
+  --color-border: #3e3e3e;
+  --color-text: #d4d4d4;
+  --color-text-muted: #808080;
+  --color-accent: #7c3aed;
+  --color-accent-hover: #6d28d9;
+  --color-error: #ef4444;
+}
+
+/* Apply custom colors to Tailwind classes */
+@layer utilities {
+  .bg-obsidian-bg { background-color: var(--color-bg); }
+  .bg-obsidian-bg-secondary { background-color: var(--color-bg-secondary); }
+  .bg-obsidian-bg-tertiary { background-color: var(--color-bg-tertiary); }
+  .border-obsidian-border { border-color: var(--color-border); }
+  .text-obsidian-text { color: var(--color-text); }
+  .text-obsidian-text-muted { color: var(--color-text-muted); }
+  .bg-obsidian-accent { background-color: var(--color-accent); }
+  .bg-obsidian-accent-hover { background-color: var(--color-accent-hover); }
+  .text-obsidian-accent { color: var(--color-accent); }
+  .border-obsidian-accent { border-color: var(--color-accent); }
+  .text-obsidian-error { color: var(--color-error); }
+  .hover\:bg-obsidian-bg-tertiary:hover { background-color: var(--color-bg-tertiary); }
+  .hover\:bg-obsidian-border:hover { background-color: var(--color-border); }
+  .hover\:bg-obsidian-accent-hover:hover { background-color: var(--color-accent-hover); }
+  .focus\:border-obsidian-accent:focus { border-color: var(--color-accent); }
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Enable middle mouse button scrolling */
+* {
+  user-select: text;
+}
+
+/* CodeMirror custom styles */
+.cm-editor {
+  height: 100%;
+}
+
+.cm-editor.cm-focused {
+  outline: none;
+}
+
+.cm-editor .cm-content {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Markdown specific styles */
+.cm-editor .cm-link {
+  color: var(--color-accent);
+  text-decoration: none;
+}
+
+.cm-editor .cm-link:hover {
+  text-decoration: underline;
+}
+
+/* Checkbox styling */
+input[type="checkbox"] {
+  cursor: pointer;
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-border);
+}
+
+input[type="checkbox"]:checked {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+/* Transitions - Exclude Excalidraw components */
+*:not(.excalidraw-wrapper *) {
+  transition-property: background-color, border-color, color;
+  transition-duration: 150ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Custom focus styles */
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+/* Disable text selection on UI elements */
+button,
+.sidebar {
+  user-select: none;
+}
+
+/* Drag and drop styles */
+.dragging {
+  opacity: 0.5;
+  cursor: move;
+}
+
+.drag-over {
+  background-color: var(--color-bg-tertiary);
+  border: 2px dashed var(--color-accent);
+}
+
+/* Zen mode animation */
+.zen-mode-enter {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Excalidraw-specific isolation to prevent conflicts */
+.excalidraw-wrapper {
+  isolation: isolate;
+}
+
+/* Ensure Excalidraw has its own stacking context */
+.excalidraw-wrapper .excalidraw {
+  position: relative;
+  z-index: 0;
+}
+
+/* Prevent global styles from affecting Excalidraw SVGs */
+.excalidraw-wrapper svg {
+  all: revert;
+}
+
+
+/* App.css veya global.css */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;     /* Firefox */
+}
+

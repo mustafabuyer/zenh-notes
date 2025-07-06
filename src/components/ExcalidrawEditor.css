@@ -1,0 +1,100 @@
+/* ExcalidrawEditor.css - CSS isolation for Excalidraw component */
+
+/* Excalidraw wrapper to isolate styles */
+.excalidraw-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* Reset global transitions for Excalidraw container */
+.excalidraw-wrapper * {
+  transition: none !important;
+}
+
+/* Override any global SVG styles that might affect Excalidraw */
+.excalidraw-wrapper svg {
+  width: auto !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* Ensure Excalidraw icons maintain their proper size */
+.excalidraw-wrapper .excalidraw svg {
+  width: initial !important;
+  height: initial !important;
+}
+
+/* Fix for icon scaling issues */
+.excalidraw-wrapper .excalidraw button svg,
+.excalidraw-wrapper .excalidraw .Island svg,
+.excalidraw-wrapper .excalidraw .dropdown-menu svg {
+  width: 1em !important;
+  height: 1em !important;
+  display: inline-block !important;
+  vertical-align: middle !important;
+}
+
+/* Ensure Excalidraw's dropdown menus display properly */
+.excalidraw-wrapper .excalidraw .dropdown-menu {
+  display: block !important;
+}
+
+/* Fix any potential z-index issues */
+.excalidraw-wrapper .excalidraw {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure proper canvas sizing */
+.excalidraw-wrapper .excalidraw canvas {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Override any box-sizing issues */
+.excalidraw-wrapper .excalidraw *,
+.excalidraw-wrapper .excalidraw *::before,
+.excalidraw-wrapper .excalidraw *::after {
+  box-sizing: border-box !important;
+}
+
+/* Fix potential font-size inheritance issues */
+.excalidraw-wrapper .excalidraw {
+  font-size: 16px !important;
+}
+
+/* Ensure proper button styling */
+.excalidraw-wrapper .excalidraw button {
+  font-size: inherit !important;
+  line-height: normal !important;
+}
+
+/* Fix for toolbar icons */
+.excalidraw-wrapper .excalidraw .App-toolbar svg,
+.excalidraw-wrapper .excalidraw .App-toolbar-container svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+/* Fix for menu icons */
+.excalidraw-wrapper .excalidraw .App-menu svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+/* Ensure proper display of Excalidraw UI elements */
+.excalidraw-wrapper .excalidraw .App-toolbar,
+.excalidraw-wrapper .excalidraw .App-menu,
+.excalidraw-wrapper .excalidraw .Island {
+  display: flex !important;
+}
+
+/* Custom dark theme overrides for better integration */
+.excalidraw-wrapper .excalidraw {
+  --color-primary: var(--color-accent);
+  --color-primary-darker: var(--color-accent-hover);
+  --color-primary-darkest: var(--color-accent-hover);
+}
