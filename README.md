@@ -158,7 +158,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Mail - mustafabuyer@gmail.com
 
-Project Link: [https://github.com/yourusername/notes-vault](https://github.com/yourusername/notes-vault)
+Project Link: [https://github.com/yourusername/notes-vault](https://github.com/mustafabuyer/zenh-notes)
 
 ---
 
